@@ -30,6 +30,10 @@ export class BoardsService {
   //   return board;
   // }
 
+  async getAllBoards(): Promise<Board[]> {
+    return this.boardRepository.find();
+  }
+
   async createBoard(createBoardDto: CreateBoardDto): Promise<Board> {
     return this.boardRepository.createBoard(createBoardDto);
   }
@@ -62,6 +66,7 @@ export class BoardsService {
 
     console.log('result', result);
   }
+
   // getBoardById(id: string): Board {
   //   const found = this.boards.find((board) => board.id === id);
   //   if (!found) {
